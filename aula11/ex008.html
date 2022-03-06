@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h2>Olá, seja bem bem-vindo!</h2>
+    <h4>Em que País você nasceu?</h4>
+    <input type="text" name="local_nasc" id="local_nasc">
+    <input type="button" value="check" onclick="verificar()" >
+    <p id="resposta">Você é...</p>
+
+    <script>
+        var pais = document.getElementById('local_nasc').value 
+        var resp = document.getElementById('resposta')
+        function verificar () {
+            if (pais.value == 'brasil') {
+                resp.innerHTML = 'Você é Brasileiro!'
+            }else {
+                resp.innerHTML = 'Você é Estrangeiro!'
+            }
+        }        
+    </script>
+    
+</body>
+</html>

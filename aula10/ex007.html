@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função 1º grau</title>
+    <style>
+        body {
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        input {
+            width: 30px;
+        }
+        #rodar {
+            width: 50px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        h2 {
+            color: #090700;
+        }   
+        #funcao {
+            font-size: 20px;
+        }
+        #resultado {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Preencha os espaços com os coeficientes da função.</h2>
+    <div id="funcao">
+        y= f(x)= 
+        <input type="number" name="a" id="a">x + 
+        <input type="number" name="b" id="b">
+        <input type="button" value="Rodar" id="rodar" onclick="calc()">
+    </div>
+    
+    <div id="resultado">
+        A raiz da equação y = ax + b é...
+    </div>
+
+    <script>
+        function calc() {
+            let ta = document.getElementById('a')
+            let tb = document.getElementById('b')
+            let a = Number(ta.value)
+            let b = Number(tb.value)
+            let raiz = -b/a
+            let res = document.getElementById('resultado')
+            if (b>0) {
+                res.innerHTML = `A raiz da equação y= ${a}x + ${b} é ${raiz}.`
+            }
+            else if (b<0) {
+                res.innerHTML = `A raiz da equação y= ${a}x  ${b} é ${raiz}.`
+            }
+            else if (b==0) {
+                res.innerHTML = `A raiz da equação y= ${a}x é ${raiz}.`
+            }
+        }
+    </script>
+
+</body>
+</html>
